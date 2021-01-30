@@ -8,11 +8,11 @@ class IndexController {
     async ruleValidation(req, res) {
         try {
             const { rule, data } = req.body
-            // if (!rule) {
-            //     return res.status(400).send(
-            //         Response.error(`rule field is required.`)
-            //     )
-            // }
+            if (!rule) {
+                return res.status(400).send(
+                    Response.error(`rule field is required.`)
+                )
+            }
             if (!data) {
                 return res.status(400).send(
                     Response.error(`data field is required.`)
