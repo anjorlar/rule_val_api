@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const settings = require('../config/settings')
+const logger = require("../libs/logger")
 let connectionString = ''
 
 process.env.NODE_ENV === 'test'
@@ -13,13 +14,13 @@ mongoose.connect(connectionString, {
     useUnifiedTopology: true,
 })
     .then((res) => {
-        console.log(`connected successfully with
+        logger.info(`connected successfully with
             connectionString: ${res.connections[0]._connectionString}, 
             Name: ${res.connections[0].name},
             Host: ${res.connections[0].host},
             Port: ${res.connections[0].port},
         `)
     })
-    .catch((error => { console.log(`error connecting`, error); process.exit(1); }));
+    .catch((error => { logger.error(`error connecting`, error); process.exit(1); }));
 
 module.exports = mongoose;

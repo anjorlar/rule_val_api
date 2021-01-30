@@ -12,6 +12,11 @@ const settings = {
         Mail: process.env.EMAIL,
         Mobile: process.env.MOBILE,
         Twitter: process.env.Twitter
+    },
+    lOGGER_DETAILS: {
+        label: process.env.LOG_LABEL,
+        level: process.env.LOG_LEVEL,
+        file: process.env.LOG_FILE
     }
 }
 
