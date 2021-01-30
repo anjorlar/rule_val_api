@@ -1,4 +1,7 @@
 # rule_val_api
+### An Api to validate request at a certain set of rules 
+* Base Route `https://rules-val-api.herokuapp.com/`
+* Validate Rule Route `https://rules-val-api.herokuapp.com/validate-rule`
 
 ## Technologies Used
 * `Backend: Node/Express`
